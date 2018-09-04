@@ -1,55 +1,46 @@
 require_relative '../src/class.rb'
 require 'terminal-table'
-
-puts "Welcome to Exercise App!"
-
+require 'date'
 
 rows=[]
-x=0
 continue="yes"
 
+titlerow=[["Welcome to Exercise Log App!"]] 
 
-puts "Enter exercise"
-name=gets.chomp
-puts "Enter number of sets for #{name}"
+title = Terminal::Table.new :rows => titlerow
+puts title
+
+puts "This is an app that tracks your exercises as you do them. Enjoy your workout!"
+puts "To start, enter your first exercise!"
+name=gets.chomp.upcase
+puts "Enter the number of sets for #{name}"
 setsno=gets.chomp.to_i
-exercise1=Exercise.new(name,setsno)
-exercise1.sets.times do
-x+=1
-puts "It's now time for set #{x}"
-puts "Please enter the weights (in kg) for this set."
-weight=gets.chomp.to_f
-puts "Please enter the number of reps you're able to do in this set."
-reps=gets.chomp.to_i
-rows << ["#{exercise1.name}","#{x}","#{weight}kg","#{reps}"]
+exercise=Exercise.new(name,setsno)
+exercise.sets.times do
+    report(rows)
+    exercise.setcount
+    rows << exercise.input
 end
 
-
-while continue=="yes"
-puts "Do you want to continue to exercise? Yes/No"
-continue=gets.chomp.downcase
-if continue=="yes"
-    puts "Enter exercise"
-    x=0
-    name=gets.chomp
-    puts "Enter number of sets for #{name}"
-    setsno=gets.chomp.to_i
-    exercise1=Exercise.new(name,setsno)
-    exercise1.sets.times do
-    x+=1
-    puts "It's now time for set #{x}"
-    puts "Please enter the weights (in kg) for this set."
-    weight=gets.chomp.to_f
-    puts "Please enter the number of reps you're able to do in this set."
-    reps=gets.chomp.to_i
-    rows << ["#{exercise1.name}","#{x}","#{weight}kg","#{reps}"]
-    end  
-elsif continue=="no"
-    puts "Thanks for using the app!"
+report(rows)
+until continue=="no"
+    report(rows)
+    puts "Do you want to continue to exercise? Please enter yes or no :)"
+    continue=gets.chomp.downcase
+    if continue=="yes"
+        puts "Enter your next exercise"
+        name=gets.chomp.upcase
+        puts "Enter the number of sets for #{name}"
+        setsno=gets.chomp.to_i
+        exercise=Exercise.new(name,setsno)
+        exercise.sets.times do
+            report(rows)
+            exercise.setcount
+            rows << exercise.input
+        end 
+    else
+        puts "Please enter yes or no only!"
     end
 end
-
-table = Terminal::Table.new :headings => ['Exercise', 'Set', 'Weight', 'Reps'], :title => "Exercise Log", :alignment => :center , :rows => rows
-puts table
-
-
+report(rows)
+puts "Thanks for using the app! Here is your exercise log!"
