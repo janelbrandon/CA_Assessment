@@ -1,4 +1,4 @@
-# TO define string for error handling of integers and floats
+# To define string for error handling of integers and floats
 class String
     def numeric?
       Float(self) != nil rescue false
@@ -36,3 +36,14 @@ def report(rows)
     puts `clear`    
     puts table
 end
+
+# method to display the history. this uses terminal-table gem, please see terminal-table gem for more documentation
+# this is not yet implemented, there have to be changes on user flow to implement history
+def history_report(rows)
+    current_time = DateTime.now
+    table = Terminal::Table.new :headings => ['Date','Exercise', 'Set', 'Weight', 'Reps'], 
+    :title => "Exercise Log History",
+    :rows => rows   
+    puts table
+end
+

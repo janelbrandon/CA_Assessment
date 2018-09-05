@@ -1,12 +1,15 @@
 # READ ME 
-######
-## Coder Academy Assessent - Ruby Terminal App
+
+## Exercise Log Version 1.0
+Developed by Mark Conanan and Thanh Dao
+A Coder Academy Assessent : Ruby Terminal App
 
 #### Link to application
-[Github Repository Link] (https://github.com/markconanan/CA_Assessment)
+[Github Repository Link](https://github.com/markconanan/CA_Assessment)
 
-#### Prerequisites
-* User is required to have the terminal-table gem to run the application
+#### Requirements
+* Ruby
+* Ruby Gem: [Terminal-Table](https://github.com/tj/terminal-table)
 
 ### **Description**
 #### **Purpose**
@@ -23,8 +26,6 @@ A simple terminal app to track the progress of the user during a workout in an e
 * exercise_app.rb contains the application
 * exercise.rb contains the exercise class and methods
 * utilities.rb contains the error handling and table method to display the exercise logs
-
-
 #### **Instructions for Use**
 1. Displays welcome message. App asks user to enter the first exercise.
 2. User to enter the number the sets he/she wishes to do 
@@ -36,8 +37,7 @@ A simple terminal app to track the progress of the user during a workout in an e
 8. If user enters ‘yes’ to continue it starts from step 2
 9. If uses enters ‘no’ it shows a table of the exercises, sets, weights and reps into an easy to read table
 #### **Future Improvements**
-* Be able to save logs and store it into the application
-* Be able to correct mistakes after input (back option)
+* Option to view history at the start of the application or proceed with the workout. The app has already been coded to save history logs.
 * Be able to record cardio exercises (running/swimming)
 * Option to put weights in pounds for American users
 * Have a list of exercises and definitions for reference
@@ -79,5 +79,9 @@ Whiteboards used during brainstorming and planning
 #### **Screenshot of Trello Boards**
 ![trelloscreenshot](/docs/trelloscreenshot.png)
 
+#### **Evidence of Communication**
+*Both developers sat next to each other
+Slack screenshot
+![slackscreenshot](/docs/slackscreenshot.png)
 
 

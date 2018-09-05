@@ -43,4 +43,8 @@ class Exercise
     def input
         return ["#{@name}","#{@setcount}","#{@weight}kg","#{@reps}"]
     end
+    # this method is to push the data to the history record. display of history is not yet implement in this version.
+    def hist_input
+        return ["#{DateTime.now.strftime "%d/%m/%Y"}","#{@name}","#{@setcount}","#{@weight}kg","#{@reps}"]
+    end
 end
