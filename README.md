@@ -5,10 +5,8 @@
 [Github Repository Link] (https://github.com/markconanan/CA_Assessment)
 
 ### **Description**
-
 #### **Purpose**
 A simple terminal app to track the progress of the user during a workout in an easy to read table.
-
 #### **Functionality**
 1. The application is able to take in inputs from the user for:
 * Exercise name
@@ -17,7 +15,6 @@ A simple terminal app to track the progress of the user during a workout in an e
 * Reps achieved for the exercise
 2. The application can display the exercise log as the user is inputting each set of exercise.
 3. The application can display the complete list after the workout is complete.
-
 #### **Instructions for Use**
 1. Displays welcome message. App asks user to enter the first exercise.
 2. User to enter the number the sets he/she wishes to do 
@@ -31,7 +28,13 @@ A simple terminal app to track the progress of the user during a workout in an e
 
 #### **Screenshots**
 
-#### **Details of Planning and Design**
+![Screenshot1 ](/images/screenshot1.jpg)
+![Screenshot2 ](/images/screenshot2.jpg)
+![Screenshot3 ](/images/screenshot3.jpg)
+![Screenshot4 ](/images/screenshot4.jpg)
+![Screenshot5 ](/images/screenshot5.jpg)
+
+### **Details of Planning and Design**
 
 #### **Evidence of Brainstorming**
 
