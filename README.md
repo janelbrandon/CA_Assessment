@@ -28,11 +28,11 @@ A simple terminal app to track the progress of the user during a workout in an e
 
 #### **Screenshots**
 
-![Screenshot1 ](/images/screenshot1.jpg)
-![Screenshot2 ](/images/screenshot2.jpg)
-![Screenshot3 ](/images/screenshot3.jpg)
-![Screenshot4 ](/images/screenshot4.jpg)
-![Screenshot5 ](/images/screenshot5.jpg)
+![Screenshot1 ](/images/screenshot1.png)
+![Screenshot2 ](/images/screenshot2.png)
+![Screenshot3 ](/images/screenshot3.png)
+![Screenshot4 ](/images/screenshot4.png)
+![Screenshot5 ](/images/screenshot5.png)
 
 ### **Details of Planning and Design**
 
