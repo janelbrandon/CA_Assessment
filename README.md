@@ -2,7 +2,11 @@
 ######
 ## Coder Academy Assessent - Ruby Terminal App
 
+#### Link to application
 [Github Repository Link] (https://github.com/markconanan/CA_Assessment)
+
+#### Prerequisites
+* User is required to have the terminal-table gem to run the application
 
 ### **Description**
 #### **Purpose**
@@ -26,6 +30,7 @@ A simple terminal app to track the progress of the user during a workout in an e
 8. If user enters ‘yes’ to continue it starts from step 2
 9. If uses enters ‘no’ it shows a table of the exercises, sets, weights and reps into an easy to read table
 
+
 #### **Screenshots**
 
 ![Screenshot1 ](/images/Screenshot1.png)
@@ -37,13 +42,29 @@ A simple terminal app to track the progress of the user during a workout in an e
 ### **Details of Planning and Design**
 
 #### **Evidence of Brainstorming**
+Whiteboards used during brainstorming and planning
+![brainstorm1 ](/images/brainstorm1.png)
+![brainstorm2](/images/brainstorm2.png)
 
 #### **User/Workflow diagram**
+![workflow](/images/flowchart.png)
 
 #### **Project Plan and Timeline**
+4 September
+* Brainstorming - Identification of scope and purpose of application
+* Setup of Github Repository and Trello
+* Development of code for application 
+* Initial documentation
+5 September
+* Testing and Error Handling
+* Documentation
+* Preparation for Presentation
+6 September
+* Completion of Application
+* Presentation of Application 
 
-#### **Screenshots and Trello Boards**
-
+#### **Screenshot of Trello Boards**
+![trelloscreenshot](/images/trelloscreenshot.png)
 
 
 

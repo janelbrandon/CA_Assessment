@@ -14,7 +14,12 @@ class Exercise
     # method used to get record each weight and reps for each set
     def setcount
             @setcount+=1
-            puts "It's now time for Set #{@setcount} of #{@name}"
+            if @setcount==1
+                puts "When you're ready, you can start with Set #{@setcount} of #{@name} :)"
+            else
+                puts "Good job on that set! :)"
+                puts "When you're ready, you can start with Set #{@setcount} of #{@name}"
+            end
             begin
                 puts "Please enter the weights (in kg) for Set #{@setcount} of #{@name}"
                 @weight=gets.chomp

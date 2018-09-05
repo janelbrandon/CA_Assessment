@@ -15,6 +15,7 @@ titlerow=[["Welcome to Exercise Log App!"]]
 title = Terminal::Table.new :rows => titlerow
 puts title
 puts "This is an app that tracks your exercises as you do them. Enjoy your workout!"
+puts "Please make sure to use proper lifting techniques!"
 
 # user is asked for the first exercise
 puts "To start, enter your first exercise!"
@@ -42,11 +43,11 @@ exercise.sets.times do
 end
 
 until continue=="no"
-    report(rows)
     # user is asked if user wants to continue to exercise. until user says no, application will continue.
     puts "Do you want to continue to exercise? Please enter yes or no :)"
     continue=gets.chomp.downcase
     if continue=="yes"
+        report(rows)
         puts "Enter your next exercise"
         name=gets.chomp.upcase
         begin
@@ -70,4 +71,5 @@ end
 
 # program ends with displaying the log
 report(rows)
+puts "Great job on finishing your workout!"
 puts "Thanks for using the app! Here is your exercise log!"
