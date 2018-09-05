@@ -43,11 +43,15 @@ A simple terminal app to track the progress of the user during a workout in an e
 * Have a list of exercises and definitions for reference
 
 #### **Screenshots**
-
+Title Screen
 ![Screenshot1 ](/docs/screenshot1.png)
+After entering exercise name and number of sets. Input of weights and reps.
 ![Screenshot2 ](/docs/screenshot2.png)
+After finishing a set and starting with the next one.
 ![Screenshot3 ](/docs/screenshot3.png)
+After completing the sets of exercise, app will ask if you want to continue the exercise.
 ![Screenshot4 ](/docs/screenshot4.png)
+App displays the complete log of the session.
 ![Screenshot5 ](/docs/screenshot5.png)
 
 ### **Details of Planning and Design**
@@ -80,8 +84,9 @@ Whiteboards used during brainstorming and planning
 ![trelloscreenshot](/docs/trelloscreenshot.png)
 
 #### **Evidence of Communication**
-*Both developers sat next to each other
-Slack screenshot
+Both developers sat next to each other during the whole project timeline.
+
+Slack screenshot below
 ![slackscreenshot](/docs/slackscreenshot.png)
 
 
