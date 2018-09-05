@@ -1,37 +1,61 @@
+# this requires to source the class and methods from another file
 require_relative '../src/class.rb'
+# this also requires terminal-table gem to be installed. it also uses the inhouse date library of ruby
 require 'terminal-table'
 require 'date'
 
+# setting of variables. rows will be used to store the exercise date and continue will be used as condition 
 rows=[]
 continue="yes"
 
+# start screen
+puts `clear`  
 titlerow=[["Welcome to Exercise Log App!"]] 
-
 title = Terminal::Table.new :rows => titlerow
 puts title
-
 puts "This is an app that tracks your exercises as you do them. Enjoy your workout!"
+
+# user is asked for the first exercise
 puts "To start, enter your first exercise!"
 name=gets.chomp.upcase
-puts "Enter the number of sets for #{name}"
-setsno=gets.chomp.to_i
+
+# user is asked for sets. the sets should be a whole number otherwise it will return an error and ask for it again.
+begin
+    puts "Enter the number of sets for #{name}"
+    setsno=gets.chomp
+    setsno=validate_intarg(setsno).to_i
+    rescue NonIntegerArgumentError
+        puts "Please enter a whole number for sets!"
+        retry
+end
+
+# inputs will now be used to set the class. 
 exercise=Exercise.new(name,setsno)
+# depending on the number of sets it will run the setcount method to log the exercises.
 exercise.sets.times do
+# this displays the rows. the method has a clear function to clear the screen.
     report(rows)
     exercise.setcount
+# this pushes the exercise name, set, weights and reps into the exercise log array
     rows << exercise.input
 end
 
-report(rows)
 until continue=="no"
     report(rows)
+    # user is asked if user wants to continue to exercise. until user says no, application will continue.
     puts "Do you want to continue to exercise? Please enter yes or no :)"
     continue=gets.chomp.downcase
     if continue=="yes"
         puts "Enter your next exercise"
         name=gets.chomp.upcase
-        puts "Enter the number of sets for #{name}"
-        setsno=gets.chomp.to_i
+        begin
+            puts "Enter the number of sets for #{name}"
+            setsno=gets.chomp
+            setsno=validate_intarg(setsno).to_i
+        rescue NonIntegerArgumentError
+            puts "Please enter a whole number for sets!"
+            retry
+        end
         exercise=Exercise.new(name,setsno)
         exercise.sets.times do
             report(rows)
@@ -42,5 +66,7 @@ until continue=="no"
         puts "Please enter yes or no only!"
     end
 end
+
+# program ends with displaying the log
 report(rows)
 puts "Thanks for using the app! Here is your exercise log!"
