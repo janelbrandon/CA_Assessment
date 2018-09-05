@@ -92,4 +92,4 @@ puts "Great job on finishing your workout!"
 puts "Remember to cool down after your workout :)"
 # code below is for storing the history. history display is not yet implemented.
 File.write('history.json', JSON.dump(history))
-history_report(history)
+# history_report(history)
