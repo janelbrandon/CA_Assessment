@@ -44,8 +44,8 @@ A simple terminal app to track the progress of the user during a workout in an e
 
 #### **Screenshots**
 
-![Screenshot1 ](/docs/Screenshot1.png)
-![Screenshot2 ](/docs/Screenshot2.png)
+![Screenshot1 ](/docs/screenshot1.png)
+![Screenshot2 ](/docs/screenshot2.png)
 ![Screenshot3 ](/docs/screenshot3.png)
 ![Screenshot4 ](/docs/screenshot4.png)
 ![Screenshot5 ](/docs/screenshot5.png)

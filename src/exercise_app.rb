@@ -26,7 +26,8 @@ begin
     puts "Enter the number of sets for #{name}"
     setsno=gets.chomp
     setsno=validate_intarg(setsno).to_i
-    rescue NonIntegerArgumentError
+    rescue 
+        puts
         puts "Please enter a whole number for sets!"
         retry
 end
@@ -55,6 +56,7 @@ until continue=="no"
             setsno=gets.chomp
             setsno=validate_intarg(setsno).to_i
         rescue NonIntegerArgumentError
+            puts
             puts "Please enter a whole number for sets!"
             retry
         end

@@ -30,7 +30,6 @@ end
 # method to display the tables. this uses terminal-table gem, please see terminal-table gem for more documentation
 def report(rows)
     current_time = DateTime.now
-    time_log = DateTime.now-current_time
     table = Terminal::Table.new :headings => ['Exercise', 'Set', 'Weight', 'Reps'], 
     :title => "Exercise Log #{current_time.strftime "%d/%m/%Y"}",
     :rows => rows
