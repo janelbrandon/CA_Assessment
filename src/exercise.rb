@@ -1,72 +1,39 @@
-# this requires to source the class and methods from another file
-require_relative '../src/class.rb'
-# this also requires terminal-table gem to be installed. it also uses the inhouse date library of ruby
-require 'terminal-table'
-require 'date'
-
-# setting of variables. rows will be used to store the exercise date and continue will be used as condition 
-rows=[]
-continue="yes"
-
-# start screen
-puts `clear`  
-titlerow=[["Welcome to Exercise Log App!"]] 
-title = Terminal::Table.new :rows => titlerow
-puts title
-puts "This is an app that tracks your exercises as you do them. Enjoy your workout!"
-
-# user is asked for the first exercise
-puts "To start, enter your first exercise!"
-name=gets.chomp.upcase
-
-# user is asked for sets. the sets should be a whole number otherwise it will return an error and ask for it again.
-begin
-    puts "Enter the number of sets for #{name}"
-    setsno=gets.chomp
-    setsno=validate_intarg(setsno).to_i
-    rescue NonIntegerArgumentError
-        puts "Please enter a whole number for sets!"
-        retry
-end
-
-# inputs will now be used to set the class. 
-exercise=Exercise.new(name,setsno)
-# depending on the number of sets it will run the setcount method to log the exercises.
-exercise.sets.times do
-# this displays the rows. the method has a clear function to clear the screen.
-    report(rows)
-    exercise.setcount
-# this pushes the exercise name, set, weights and reps into the exercise log array
-    rows << exercise.input
-end
-
-until continue=="no"
-    report(rows)
-    # user is asked if user wants to continue to exercise. until user says no, application will continue.
-    puts "Do you want to continue to exercise? Please enter yes or no :)"
-    continue=gets.chomp.downcase
-    if continue=="yes"
-        puts "Enter your next exercise"
-        name=gets.chomp.upcase
-        begin
-            puts "Enter the number of sets for #{name}"
-            setsno=gets.chomp
-            setsno=validate_intarg(setsno).to_i
-        rescue NonIntegerArgumentError
-            puts "Please enter a whole number for sets!"
+# Definition of exercise class and methods.
+class Exercise
+    attr_accessor :name, :sets,:setcount,:rows,:weight,:reps
+    # we start with name and sets to initialize the exercise class, it also resets everything if same variable is used.
+    def initialize(name,sets)
+        @name=name
+        @sets=sets
+        @setcount=0
+        @rows=[]
+    end
+    def sets
+        return @sets
+    end
+    # method used to get record each weight and reps for each set
+    def setcount
+            @setcount+=1
+            puts "It's now time for Set #{@setcount} of #{@name}"
+            begin
+                puts "Please enter the weights (in kg) for Set #{@setcount} of #{@name}"
+                @weight=gets.chomp
+                @weight = validate_numarg(@weight).to_f
+            rescue NonNumericArgumentError
+                puts "Please put a number for weights! :)"
+                retry
+            end
+            begin
+                puts "Start! When you are finished please enter the number of reps you're able to do for Set #{@setcount}"
+                @reps=gets.chomp
+                @reps = validate_intarg(@reps).to_i
+            rescue NonIntegerArgumentError
+                puts "Please put a whole number for reps! :)"
             retry
-        end
-        exercise=Exercise.new(name,setsno)
-        exercise.sets.times do
-            report(rows)
-            exercise.setcount
-            rows << exercise.input
-        end 
-    else
-        puts "Please enter yes or no only!"
+            end
+    end
+    # method used to push the instance variables name, setcount, weight and reps into the array for the table
+    def input
+        return ["#{@name}","#{@setcount}","#{@weight}kg","#{@reps}"]
     end
 end
-
-# program ends with displaying the log
-report(rows)
-puts "Thanks for using the app! Here is your exercise log!"
